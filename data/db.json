@@ -1,0 +1,134 @@
+{
+  "story": [
+    {
+      "id": 1,
+      "account": "aaaaa",
+      "img": "/src/image/story/a.png"
+    },
+    {
+      "id": 2,
+      "account": "bbbbbbbbbb",
+      "img": "/src/image/story/b.png"
+    },
+    {
+      "id": 3,
+      "account": "ccc",
+      "img": "/src/image/story/c.png"
+    },
+    {
+      "id": 4,
+      "account": "dddddddddd",
+      "img": "/src/image/story/d.png"
+    },
+    {
+      "id": 5,
+      "account": "eeee",
+      "img": "/src/image/story/e.png"
+    },
+    {
+      "id": 6,
+      "account": "ffff",
+      "img": "/src/image/story/f.png"
+    },
+    {
+      "id": 7,
+      "account": "ggggg",
+      "img": "/src/image/story/g.png"
+    },
+    {
+      "id": 8,
+      "account": "h",
+      "img": "/src/image/story/h.png"
+    },
+    {
+      "id": 9,
+      "account": "iiiiiiiiiii",
+      "img": "/src/image/story/i.png"
+    },
+    {
+      "id": 10,
+      "account": "jjjjjjjjj",
+      "img": "/src/image/story/j.png"
+    },
+    {
+      "id": 11,
+      "account": "kkkkkkkkkkkkkkkkk",
+      "img": "/src/image/story/k.png"
+    },
+    {
+      "id": 12,
+      "account": "lll",
+      "img": "/src/image/story/l.png"
+    },
+    {
+      "id": 13,
+      "account": "mmmmm",
+      "img": "/src/image/story/m.png"
+    },
+    {
+      "id": 14,
+      "account": "nnnn",
+      "img": "/src/image/story/n.png"
+    },
+    {
+      "id": 15,
+      "account": "ooo",
+      "img": "/src/image/story/o.png"
+    },
+    {
+      "id": 16,
+      "account": "ppppp",
+      "img": "/src/image/story/p.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "account": "aaaaa",
+      "img": "/src/image/story/a.png",
+      "photo": "/src/image/photo/a.PNG",
+      "content": "讓你看看我的太陽光線!!",
+      "comment": []
+    },
+    {
+      "id": 2,
+      "account": "bbbbbbbbbb",
+      "img": "/src/image/story/b.png",
+      "photo": "/src/image/photo/b.jpg",
+      "content": "堡包..希望你在天堂過得快快樂樂,每天都吃得飽飽!!",
+      "comment": []
+    },
+    {
+      "id": 3,
+      "account": "ccc",
+      "img": "/src/image/story/c.png",
+      "photo": "/src/image/photo/c.jpg",
+      "content": "我是誰..我在哪?",
+      "comment": []
+    },
+    {
+      "id": 4,
+      "account": "dddddddddd",
+      "img": "/src/image/story/d.png",
+      "photo": "/src/image/photo/d.jpg",
+      "content": "今天就決定是你了!!mini austin!!!",
+      "comment": []
+    },
+    {
+      "id": 5,
+      "account": "eeee",
+      "img": "/src/image/story/e.png",
+      "photo": "/src/image/photo/e.jpg",
+      "content": "他好像要吃我..我現在技能只有變硬...再線求救",
+      "comment": []
+    },
+    {
+      "id": 6,
+      "account": "ffff",
+      "img": "/src/image/story/f.png",
+      "photo": "/src/image/photo/f.jpg",
+      "content": "全家福",
+      "comment": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: "black";
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+.border-gradient-rounded {
+  border-radius: 9999px;
+  background-image: linear-gradient(to right top, #ffdd55, #ffaa33, #ff0088, #c10066);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.border-gradient-rounded:hover {
+  border-image: linear-gradient(to right, #4facfe, #00f2fe);
+  border-image-slice: 1;
+}
