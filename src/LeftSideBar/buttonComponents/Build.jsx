@@ -5,11 +5,12 @@ export default function Build({ showMask, setShowMask }) {
   return (
     <div
       onClick={(e) => {
+        console.log(e.currentTarget, e.target)
         if (e.target === e.currentTarget) {
           setShowMask(!showMask)
         }
       }}
-      className="w-full h-screen bg-[#00000090] fixed z-50 flex justify-center items-center"
+      className="w-full h-full bg-[#00000090] fixed z-50 flex justify-center items-center"
     >
       <button onClick={() => setShowMask(!showMask)} className="absolute top-2 right-2">
         <FaX className="text-white" />

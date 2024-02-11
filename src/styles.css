@@ -1,20 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
-  background-color: "black";
-  margin: 0px;
-  width: 100%;
-  height: 100%;
-}
-.border-gradient-rounded {
-  border-radius: 9999px;
-  background-image: linear-gradient(to right top, #ffdd55, #ffaa33, #ff0088, #c10066);
-  border: 1px solid transparent;
-  background-clip: padding-box;
+  background: black;
+  margin: 0;
 }
 
-.border-gradient-rounded:hover {
-  border-image: linear-gradient(to right, #4facfe, #00f2fe);
-  border-image-slice: 1;
+.scroll::-webkit-scrollbar {
+  background: transparent;
 }
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+  scale: 0.72;
+}
+
+//
+.back {
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: translateZ(280px);
+}
+.left {
+  transform: translateX(-280px) rotateY(-90deg);
+}
+.right {
+  transform: translateX(280px) rotateY(90deg);
+}
+.back {
+  transform: translateZ(-250px) rotateY(180deg);
+}
+
+/* .cube {
+  transform-style: preserve-3d;
+  animation: rotate-cube 20s infinite linear;
+  backface: visibility;
+}
+@keyframes rotate-cube {
+  0% {
+    transform: rotateX(30deg) rotateY(90deg);
+  }
+  25% {
+    transform: rotateX(30deg) rotateY(180deg);
+  }
+  50% {
+    transform: rotateX(30deg) rotateY(270deg);
+  }
+  75% {
+    transform: rotateX(30deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(30deg) rotateY(0deg);
+  }
+} */

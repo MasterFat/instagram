@@ -1,3 +1,4 @@
+//icon
 import { IoIosSettings } from "react-icons/io"
 import { TbPhoto } from "react-icons/tb"
 import { LiaBookmark } from "react-icons/lia"
@@ -14,16 +15,16 @@ const moreList = [
 
 export const More = () => {
   return (
-    <div className="w-44 h-3/5 bg-zinc-800 fixed z-50 bottom-12 left-2 flex-col text-white text-xs border-0 rounded-xl">
-      <div className="w-full h-3/5 flex justify-center">
-        <nav className="w-11/12 h-full m-auto">
+    <div className="w-[13rem] h-[21rem] bg-zinc-800 fixed z-50 bottom-14 left-2 flex-col text-white text-sm border-0 rounded-xl">
+      <div className="w-full h-4/6 flex justify-center">
+        <nav className="w-11/12 h-[13rem] m-auto">
           <ul className="w-full h-full">
             {moreList.map((item) => (
-              <li key={item.id} className="w-full h-1/5 mt-1">
+              <li key={item.id} className="w-full h-1/5">
                 <button className="flex w-full h-full hover:bg-zinc-700 items-center border-0 rounded-md transition-all ease-out">
                   <div className="h-full flex items-center mr-2 ml-2 text-base">{item.icon}</div>
                   <div className="h-full flex items-center">
-                    <p className="text-xs">{item.name}</p>
+                    <span className="text-sm">{item.name}</span>
                   </div>
                 </button>
               </li>
@@ -31,12 +32,12 @@ export const More = () => {
           </ul>
         </nav>
       </div>
-      <div className="w-full h-10 border-t-4 border-zinc-700 border-b flex justify-center items-center mt-7">
+      <div className="w-full h-1/6 border-t-4 border-zinc-700 border-b flex justify-center items-center ">
         <button className="flex w-11/12 h-8 hover:bg-zinc-700 items-center border-0 rounded-md transition-all ease-out">
           <span className="ml-2">切換帳號</span>
         </button>
       </div>
-      <div className="w-full h-10 flex justify-center items-center">
+      <div className="w-full h-1/6 flex justify-center items-center">
         <button className="flex w-11/12 h-8 hover:bg-zinc-700 items-center border-0 rounded-md transition-all ease-out">
           <span className="ml-2">登出</span>
         </button>

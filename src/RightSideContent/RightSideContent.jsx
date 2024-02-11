@@ -15,7 +15,7 @@ const recommend = [
 
 export const RightSideContent = () => {
   return (
-    <div className="relative w-[13rem] -right-2 top-5 ml-4">
+    <div className="hidden xl:block relative w-[13rem] -right-2 top-8 ml-8">
       <div className="w-full relative flex">
         <div className="border-0 rounded-full w-10 h-10 bg-zinc-900">
           <img src={Gangar} alt="" />
@@ -37,7 +37,7 @@ export const RightSideContent = () => {
           </div>
           <div className="flex flex-col text-white text-sm justify-center ml-3">
             <span className="font-bold">{item.account}</span>
-            <span className="text-zinc-400">為你推薦</span>
+            <span className="text-zinc-400 text-xs">為你推薦</span>
           </div>
           <button className="text-sky-500 text-sm absolute top-3 right-0 hover:text-white">追蹤</button>
         </div>

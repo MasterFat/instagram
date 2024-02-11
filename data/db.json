@@ -3,132 +3,488 @@
     {
       "id": 1,
       "account": "aaaaa",
-      "img": "/src/image/story/a.png"
+      "avatar": "/src/image/story/a.png",
+      "photos": "/src/image/story/storysPhotos/a.JPG"
     },
     {
       "id": 2,
       "account": "bbbbbbbbbb",
-      "img": "/src/image/story/b.png"
+      "avatar": "/src/image/story/b.png",
+      "photos": "/src/image/story/storysPhotos/b.JPG"
     },
     {
       "id": 3,
       "account": "ccc",
-      "img": "/src/image/story/c.png"
+      "avatar": "/src/image/story/c.png",
+      "photos": "/src/image/story/storysPhotos/c.JPG"
     },
     {
       "id": 4,
       "account": "dddddddddd",
-      "img": "/src/image/story/d.png"
+      "avatar": "/src/image/story/d.png",
+      "photos": "/src/image/story/storysPhotos/d.JPG"
     },
     {
       "id": 5,
       "account": "eeee",
-      "img": "/src/image/story/e.png"
+      "avatar": "/src/image/story/e.png",
+      "photos": "/src/image/story/storysPhotos/e.JPG"
     },
     {
       "id": 6,
       "account": "ffff",
-      "img": "/src/image/story/f.png"
+      "avatar": "/src/image/story/f.png",
+      "photos": "/src/image/story/storysPhotos/f.JPG"
     },
     {
       "id": 7,
       "account": "ggggg",
-      "img": "/src/image/story/g.png"
+      "avatar": "/src/image/story/g.png",
+      "photos": "/src/image/story/storysPhotos/g.JPG"
     },
     {
       "id": 8,
       "account": "h",
-      "img": "/src/image/story/h.png"
+      "avatar": "/src/image/story/h.png",
+      "photos": "/src/image/story/storysPhotos/h.JPG"
     },
     {
       "id": 9,
       "account": "iiiiiiiiiii",
-      "img": "/src/image/story/i.png"
+      "avatar": "/src/image/story/i.png",
+      "photos": "/src/image/story/storysPhotos/i.JPG"
     },
     {
       "id": 10,
       "account": "jjjjjjjjj",
-      "img": "/src/image/story/j.png"
+      "avatar": "/src/image/story/j.png",
+      "photos": "/src/image/story/storysPhotos/j.JPG"
     },
     {
       "id": 11,
       "account": "kkkkkkkkkkkkkkkkk",
-      "img": "/src/image/story/k.png"
+      "avatar": "/src/image/story/k.png",
+      "photos": "/src/image/story/storysPhotos/k.JPG"
     },
     {
       "id": 12,
       "account": "lll",
-      "img": "/src/image/story/l.png"
+      "avatar": "/src/image/story/l.png",
+      "photos": "/src/image/story/storysPhotos/l.JPG"
     },
     {
       "id": 13,
       "account": "mmmmm",
-      "img": "/src/image/story/m.png"
+      "avatar": "/src/image/story/m.png",
+      "photos": "/src/image/story/storysPhotos/m.JPG"
     },
     {
       "id": 14,
       "account": "nnnn",
-      "img": "/src/image/story/n.png"
+      "avatar": "/src/image/story/n.png",
+      "photos": "/src/image/story/storysPhotos/n.JPG"
     },
     {
       "id": 15,
       "account": "ooo",
-      "img": "/src/image/story/o.png"
+      "avatar": "/src/image/story/o.png",
+      "photos": "/src/image/story/storysPhotos/o.JPG"
     },
     {
       "id": 16,
       "account": "ppppp",
-      "img": "/src/image/story/p.png"
+      "avatar": "/src/image/story/p.png",
+      "photos": "/src/image/story/storysPhotos/p.JPG"
     }
   ],
   "posts": [
     {
       "id": 1,
       "account": "aaaaa",
-      "img": "/src/image/story/a.png",
+      "avatar": "/src/image/story/a.png",
       "photo": "/src/image/photo/a.PNG",
-      "content": "讓你看看我的太陽光線!!",
-      "comment": []
+      "content": "讓你看看我的太陽光線!!"
     },
     {
       "id": 2,
       "account": "bbbbbbbbbb",
-      "img": "/src/image/story/b.png",
+      "avatar": "/src/image/story/b.png",
       "photo": "/src/image/photo/b.jpg",
-      "content": "堡包..希望你在天堂過得快快樂樂,每天都吃得飽飽!!",
-      "comment": []
+      "content": "堡包..希望你在天堂過得快快樂樂,每天都吃得飽飽!!"
     },
     {
       "id": 3,
       "account": "ccc",
-      "img": "/src/image/story/c.png",
+      "avatar": "/src/image/story/c.png",
       "photo": "/src/image/photo/c.jpg",
-      "content": "我是誰..我在哪?",
-      "comment": []
+      "content": "我是誰..我在哪?"
     },
     {
       "id": 4,
       "account": "dddddddddd",
-      "img": "/src/image/story/d.png",
+      "avatar": "/src/image/story/d.png",
       "photo": "/src/image/photo/d.jpg",
-      "content": "今天就決定是你了!!mini austin!!!",
-      "comment": []
+      "content": "今天就決定是你了!!mini austin!!!"
     },
     {
       "id": 5,
       "account": "eeee",
-      "img": "/src/image/story/e.png",
+      "avatar": "/src/image/story/e.png",
       "photo": "/src/image/photo/e.jpg",
-      "content": "他好像要吃我..我現在技能只有變硬...再線求救",
-      "comment": []
+      "content": "他好像要吃我..我現在技能只有變硬...再線求救"
     },
     {
       "id": 6,
       "account": "ffff",
-      "img": "/src/image/story/f.png",
+      "avatar": "/src/image/story/f.png",
       "photo": "/src/image/photo/f.jpg",
-      "content": "全家福",
-      "comment": []
+      "content": "全家福"
+    }
+  ],
+  "comments": [
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "content": "太陽光線是三小??",
+      "date": "1週",
+      "like": "2",
+      "id": 1
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "content": "堡包再見",
+      "date": "1週",
+      "like": "2",
+      "id": 2
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "content": "默哀..",
+      "date": "1週",
+      "like": "2",
+      "id": 3
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "content": "笑死",
+      "date": "1週",
+      "like": "2",
+      "id": 4
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "content": "為什麼要這樣對待她",
+      "date": "1週",
+      "like": "2",
+      "id": 5
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "哈哈哈哈",
+      "id": 6
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 7
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": ".0",
+      "id": 8
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 9
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "45645",
+      "id": 10
+    },
+    {
+      "post": 3,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123134563",
+      "id": 11
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 12
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 13
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 14
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 15
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 16
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 17
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 18
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 19
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 20
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 21
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 22
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 23
+    },
+    {
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 24
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 25
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "222",
+      "id": 26
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "111",
+      "id": 27
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 28
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 29
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "",
+      "id": 30
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "333",
+      "id": 31
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 32
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "1223",
+      "id": 33
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "1223",
+      "id": 34
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 35
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 36
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 37
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "654",
+      "id": 38
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 39
+    },
+    {
+      "post": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "654",
+      "id": 40
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "321",
+      "id": 41
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 42
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 43
+    },
+    {
+      "post": 2,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "123",
+      "id": 44
     }
   ]
 }
