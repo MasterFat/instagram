@@ -1,10 +1,11 @@
-//icon
+//icons
 import { IoIosSettings } from "react-icons/io"
 import { TbPhoto } from "react-icons/tb"
 import { LiaBookmark } from "react-icons/lia"
 import { GoMoon } from "react-icons/go"
 import { BiMessageAltError } from "react-icons/bi"
 
+//"更多"選單內容資料陣列
 const moreList = [
   { id: 1, name: "設定", icon: <IoIosSettings /> },
   { id: 2, name: "你的動態", icon: <TbPhoto /> },
@@ -13,9 +14,10 @@ const moreList = [
   { id: 5, name: "回報問題", icon: <BiMessageAltError /> },
 ]
 
+//"更多" 按鈕
 export const More = () => {
   return (
-    <div className="w-[13rem] h-[21rem] bg-zinc-800 fixed z-50 bottom-14 left-2 flex-col text-white text-sm border-0 rounded-xl">
+    <div className="w-[13rem] h-[21rem] bg-zinc-800 fixed z-50 bottom-16 left-2 flex-col text-white text-sm border-0 rounded-xl">
       <div className="w-full h-4/6 flex justify-center">
         <nav className="w-11/12 h-[13rem] m-auto">
           <ul className="w-full h-full">

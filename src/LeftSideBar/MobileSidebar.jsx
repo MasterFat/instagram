@@ -1,14 +1,16 @@
+//icons
 import instagram from "/src/image/instagram.svg"
 import { FaRegHeart } from "react-icons/fa6"
 import { LeftSideBarData } from "./lib/LeftSideBarData"
 
+//手機板上下選單(當畫面寬度<768時顯示)
 export const MobileSidebar = ({ handleButtonClick }) => {
   return (
     <>
       <div className="w-full h-12 bg-black fixed z-40 top-0 flex justify-center text-white border-b border-zinc-800 md:hidden">
         <div className="w-11/12 h-full flex justify-between items-center">
           <img src={instagram} alt="instagram" />
-          <input type="text" placeholder="   搜尋" className="w-1/2 h-8 bg-zinc-800 outline-none border-0 rounded-md" />
+          <input id="input2" type="text" placeholder="   搜尋" className="w-1/2 h-8 bg-zinc-800 outline-none border-0 rounded-md" />
           <FaRegHeart />
         </div>
       </div>

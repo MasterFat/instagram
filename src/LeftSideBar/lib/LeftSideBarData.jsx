@@ -1,3 +1,4 @@
+//icons
 import { FaRegCompass } from "react-icons/fa"
 import { BiMoviePlay } from "react-icons/bi"
 import { PiMessengerLogoBold } from "react-icons/pi"
@@ -9,6 +10,7 @@ import { FaBars } from "react-icons/fa6"
 import { GoHomeFill } from "react-icons/go"
 import { PiMagnifyingGlassBold } from "react-icons/pi"
 
+//電腦版 左側欄選單 內容資料陣列
 export const LeftSideBarData = [
   { id: 1, name: "首頁", icon: <GoHomeFill /> },
   { id: 2, name: "搜尋", icon: <PiMagnifyingGlassBold /> },

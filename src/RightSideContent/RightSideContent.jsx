@@ -1,3 +1,4 @@
+//頭像圖片
 import Gangar from "/src/image/story/f.png"
 import g from "/src/image/story/g.png"
 import h from "/src/image/story/h.png"
@@ -5,6 +6,7 @@ import i from "/src/image/story/i.png"
 import j from "/src/image/story/j.png"
 import k from "/src/image/story/k.png"
 
+//"為您推薦" 資料陣列
 const recommend = [
   { id: 1, src: g, account: "ggggg" },
   { id: 2, src: h, account: "h" },
@@ -13,6 +15,7 @@ const recommend = [
   { id: 5, src: k, account: "kkkkkkkkkkkk" },
 ]
 
+//右側 "為您推薦" 內容
 export const RightSideContent = () => {
   return (
     <div className="hidden xl:block relative w-[13rem] -right-2 top-8 ml-8">

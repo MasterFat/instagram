@@ -131,7 +131,7 @@
       "account": "eeee",
       "avatar": "/src/image/story/e.png",
       "photo": "/src/image/photo/e.jpg",
-      "content": "他好像要吃我..我現在技能只有變硬...再線求救"
+      "content": "他好像要吃我..我現在技能只有變硬...在線求救"
     },
     {
       "id": 6,
@@ -188,191 +188,12 @@
       "id": 5
     },
     {
-      "post": 3,
+      "post": 4,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
-      "content": "哈哈哈哈",
+      "content": "你好唷",
       "id": 6
-    },
-    {
-      "post": 3,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123",
-      "id": 7
-    },
-    {
-      "post": 3,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": ".0",
-      "id": 8
-    },
-    {
-      "post": 3,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123",
-      "id": 9
-    },
-    {
-      "post": 3,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "45645",
-      "id": 10
-    },
-    {
-      "post": 3,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123134563",
-      "id": 11
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 12
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 13
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 14
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 15
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 16
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 17
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 18
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 19
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 20
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 21
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 22
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 23
-    },
-    {
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 24
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "321",
-      "id": 25
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "222",
-      "id": 26
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "111",
-      "id": 27
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 28
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 29
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "",
-      "id": 30
     },
     {
       "post": 1,
@@ -380,111 +201,63 @@
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
       "content": "333",
-      "id": 31
+      "id": 7
+    },
+    {
+      "post": 4,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "這台車好帥哦!",
+      "id": 8
+    },
+    {
+      "post": 4,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "這台車帥喔!",
+      "id": 9
+    },
+    {
+      "post": 6,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "你好唷",
+      "id": 10
+    },
+    {
+      "post": 4,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "好帥!!",
+      "id": 11
     },
     {
       "post": 1,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
-      "content": "321",
-      "id": 32
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "1223",
-      "id": 33
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "1223",
-      "id": 34
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123",
-      "id": 35
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "321",
-      "id": 36
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "321",
-      "id": 37
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "654",
-      "id": 38
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "321",
-      "id": 39
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "654",
-      "id": 40
+      "content": "你好唷",
+      "id": 12
     },
     {
       "post": 2,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
-      "content": "321",
-      "id": 41
+      "content": "好可愛....",
+      "id": 13
     },
     {
-      "post": 2,
+      "post": 6,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
-      "content": "123",
-      "id": 42
-    },
-    {
-      "post": 2,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123",
-      "id": 43
-    },
-    {
-      "post": 2,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "123",
-      "id": 44
+      "content": "好好笑",
+      "id": 14
     }
   ]
 }

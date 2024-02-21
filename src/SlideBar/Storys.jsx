@@ -7,54 +7,124 @@ import { FaX } from "react-icons/fa6"
 import { BiSolidVolumeMute } from "react-icons/bi"
 import { BsThreeDots } from "react-icons/bs"
 
-export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId }) => {
+//展示限時動態頁面
+export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, setSpin }) => {
+  //單個限時動態資料
   const [currentStoryData, setCurrentStoryData] = useState([])
-  const [prevStoryData, setPrevStoryData] = useState([])
-  const [nextStoryData, setNextStoryData] = useState([])
-
+  //設定立方體轉動角度
   const [degree, setDegree] = useState(0)
-  console.log(degree)
+
+  const [progressBar, setProgressBar] = useState(true)
 
   const getStorys = (id) => {
     axios.get("http://localhost:8000/story/" + id).then((res) => setCurrentStoryData(res.data))
   }
-  const getPrevStorys = (id) => {
-    axios.get("http://localhost:8000/story/" + id).then((res) => setPrevStoryData(res.data))
-  }
-  const getNextStorys = (id) => {
-    axios.get("http://localhost:8000/story/" + id).then((res) => setNextStoryData(res.data))
-  }
+
+  spin &&
+    setTimeout(() => {
+      setDegree(degree + 90)
+      setStoryId(storyId + 1)
+      setSpin(!spin)
+      setProgressBar(false)
+    }, 3000)
+
   useEffect(() => {
     getStorys(storyId)
-    getPrevStorys(storyId - 1)
-    getNextStorys(storyId + 1)
-    const interval = setInterval(() => {
-      setDegree(degree + 90)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [storyId, degree])
+    if (storyId < 1 || storyId > 16) {
+      setShowStorys(false)
+    }
+  }, [storyId, setStoryId, degree, setShowStorys])
+
+  //限時動態遮罩背景+轉動立方體
   return (
     <div className="w-full h-full bg-zinc-800 fixed z-50 flex perspective justify-center items-center">
       <div
-        // onClick={() => setDegree(degree + 90)}
-        style={{ transform: ` rotateY(${-degree}deg)` }}
-        className="w-[28rem] h-full transform-style-3d transition-all duration-500 "
+        onTransitionEnd={() => {
+          setProgressBar(true)
+          setTimeout(() => {
+            setDegree(degree + 90), setStoryId(storyId + 1), setProgressBar(false)
+          }, 3000)
+        }}
+        style={{ transform: `rotateY(${-degree}deg)` }}
+        className="w-[28rem] h-full transform-style-3d transition-all duration-300"
       >
-        <Story position="front" showStorys={showStorys} setShowStorys={setShowStorys} storyData={currentStoryData} degree={degree} setDegree={setDegree} />
-        <Story position="left" showStorys={showStorys} setShowStorys={setShowStorys} storyData={prevStoryData} degree={degree} setDegree={setDegree} />
-        <Story position="right" showStorys={showStorys} setShowStorys={setShowStorys} storyData={nextStoryData} degree={degree} setDegree={setDegree} />
+        <Story
+          position="front"
+          storyId={storyId}
+          setStoryId={setStoryId}
+          showStorys={showStorys}
+          setShowStorys={setShowStorys}
+          storyData={currentStoryData}
+          degree={degree}
+          setDegree={setDegree}
+          transitionEnd={progressBar}
+        />
+        <Story
+          position="left"
+          storyId={storyId}
+          setStoryId={setStoryId}
+          showStorys={showStorys}
+          setShowStorys={setShowStorys}
+          storyData={currentStoryData}
+          degree={degree}
+          setDegree={setDegree}
+          transitionEnd={progressBar}
+        />
+        <Story
+          position="right"
+          storyId={storyId}
+          setStoryId={setStoryId}
+          showStorys={showStorys}
+          setShowStorys={setShowStorys}
+          storyData={currentStoryData}
+          degree={degree}
+          setDegree={setDegree}
+          transitionEnd={progressBar}
+        />
+        <Story
+          position="back"
+          storyId={storyId}
+          setStoryId={setStoryId}
+          showStorys={showStorys}
+          setShowStorys={setShowStorys}
+          storyData={currentStoryData}
+          degree={degree}
+          setDegree={setDegree}
+          transitionEnd={progressBar}
+        />
       </div>
     </div>
   )
 }
 
-const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegree }) => {
+//立方體的每一面
+const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegree, storyId, setStoryId, transitionEnd }) => {
   return (
     <>
       {/*限時動態容器*/}
       <div className={`${position} bg-black absolute w-full h-full flex justify-center items-center`}>
-        <div onClick={() => setDegree(degree - 90)} className="w-1/2 h-full fixed left-0 z-10"></div>
-        <div onClick={() => setDegree(degree + 90)} className="w-1/2 h-full fixed right-0 z-10"></div>
+        {/*左右透明遮罩,點擊轉動前一則或下一則限動*/}
+        {/*左*/}
+        <div
+          onClick={() => {
+            setDegree(degree - 90), setStoryId(storyId - 1)
+          }}
+          className="w-1/2 h-full fixed left-0 z-10"
+        ></div>
+        {/*右*/}
+        <div
+          onClick={() => {
+            setDegree(degree + 90), setStoryId(storyId + 1)
+          }}
+          className="w-1/2 h-full fixed right-0 z-10"
+        ></div>
+
+        {/*上方進度條*/}
+        <div className="w-[27rem] h-[0.2rem] absolute top-1 bg-slate-300/50 border-0 rounded-md overflow-hidden">
+          {/* <div className={`forwards w-full h-full bg-white`}></div> */}
+          <div className={`${transitionEnd ? "forwards" : "w-0"} h-full bg-white`}></div>
+        </div>
+
         {/*右上按鈕欄位*/}
         <div className="absolute top-5 right-2 text-white text-base flex z-50">
           <button className="mr-3">
@@ -67,6 +137,7 @@ const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegr
             <FaX />
           </button>
         </div>
+
         {/*左上頭像、帳號欄位*/}
         <div className="text-white absolute flex items-center top-3 left-2 z-50 text-sm font-bold">
           <div className="w-7 h-7 border-0 rounded-full bg-zinc-900 mr-2">
@@ -74,11 +145,12 @@ const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegr
           </div>
           <span>{storyData.account}</span>
         </div>
+
         {/*照片*/}
         <img src={storyData.photos} alt="storyPhoto" className="w-full h-full aspect-auto object-contain" />
         <div className="w-full absolute bottom-5 flex items-center justify-evenly">
           <div className="w-[22rem] h-7 border rounded-xl flex items-center">
-            <input type="text" placeholder="    發送訊息" className="ml-3 bg-transparent placeholder:text-sm outline-none caret-white text-white" />
+            <input id="input" type="text" placeholder="    發送訊息" className="ml-3 bg-transparent placeholder:text-sm outline-none caret-white text-white" />
           </div>
           <button>
             <img src={heart} alt="" />

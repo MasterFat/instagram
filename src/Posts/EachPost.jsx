@@ -4,7 +4,7 @@ import axios from "axios"
 //貼文的四個按鈕圖示資料
 import { PostIcon } from "../LeftSideBar/lib/PostIcon"
 
-//icon
+//icons
 import Gangar from "/src/image/story/f.png"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 import { FaRegHeart } from "react-icons/fa6"
@@ -55,12 +55,14 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
           <FaX />
         </button>
       </div>
+
       {/*貼文容器*/}
       <div className="w-9/12 h-5/6 bg-black flex border border-zinc-900">
         {/*左側照片區塊*/}
         <div className="w-1/2 h-full">
           <img src={postData.photo} alt="photo" className="w-full h-full aspect-auto object-contain" />
         </div>
+
         {/*右側帳號、內文、留言等區塊*/}
         <div className="w-1/2 h-full flex flex-wrap border border-zinc-900">
           {/*右側頂部帳號*/}
@@ -73,6 +75,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
               <HiOutlineDotsHorizontal />
             </div>
           </div>
+
           {/*內文*/}
           <div className="w-full h-4/6 border-b border-zinc-900 flex flex-wrap scroll overflow-y-scroll">
             <div className="w-full flex flex-col">
@@ -83,6 +86,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
                   <span className="text-sm break-all">{postData.content}</span>
                 </div>
               </div>
+
               {/*留言(沒有讚數就不顯示"X個讚")*/}
               {commentsData.map((comment) => (
                 <div key={comment.id} className="w-full flex items-center relative">
@@ -107,6 +111,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
               ))}
             </div>
           </div>
+
           {/*讚、留言按鈕區塊*/}
           <div className="relative w-full flex flex-wrap border-b border-zinc-900">
             <div className="w-full flex items-center">
@@ -120,6 +125,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
               <span className="ml-3">6個讚</span>
             </div>
           </div>
+
           {/*留言輸入框(如果沒輸入任何文字則無法送出留言)*/}
           <div className="w-full flex h-10">
             <div className="w-full flex items-center text-white">

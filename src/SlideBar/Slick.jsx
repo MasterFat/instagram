@@ -1,10 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+
+//Slder套件
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-export const Slick = ({ showStorys, setShowStorys, setStoryId }) => {
+export const Slick = ({ showStorys, setShowStorys, setStoryId, spin, setSpin }) => {
   //限時動態資料
   const [story, setStory] = useState([])
   //Slick套件每次顯示X個物件設定
@@ -19,16 +21,16 @@ export const Slick = ({ showStorys, setShowStorys, setStoryId }) => {
     getStory()
 
     //當視窗寬度小於600時，則設定Slick套件每次只顯示五個物件，否則為八個物件
-    const resize = () => {
+    const showObjects = () => {
       if (window.innerWidth < 600) {
         setToShow(5)
       } else {
         setToShow(8)
       }
     }
-    window.addEventListener("resize", resize)
+    window.addEventListener("resize", showObjects)
     return () => {
-      window.removeEventListener("resize", resize)
+      window.removeEventListener("resize", showObjects)
     }
   }, [])
 
@@ -60,7 +62,7 @@ export const Slick = ({ showStorys, setShowStorys, setStoryId }) => {
           <div key={item.id} className="ml-1">
             <button
               onClick={() => {
-                setShowStorys(!showStorys), setStoryId(item.id)
+                setShowStorys(!showStorys), setStoryId(item.id), setSpin(!spin)
               }}
             >
               <div className="border-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 rounded-full w-14 h-14 flex justify-center items-center">

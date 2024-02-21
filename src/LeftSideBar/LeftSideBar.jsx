@@ -5,10 +5,11 @@ import Build from "./buttonComponents/build"
 import { More } from "./buttonComponents/More"
 import { Search } from "./buttonComponents/Search"
 import { MobileSidebar } from "./MobileSidebar"
+
 //側欄按鈕靜態資料
 import { LeftSideBarData } from "./lib/LeftSideBarData"
 
-//icon
+//icons
 import { FaInstagram } from "react-icons/fa"
 import { Notify } from "./buttonComponents/Notify"
 import instagram from "/src/image/instagram.svg"
@@ -16,12 +17,16 @@ import instagram from "/src/image/instagram.svg"
 export const LeftSideBar = () => {
   //設定滑鼠移進移出每個按鈕的id
   const [currentId, setcurrentId] = useState(-1)
+
   //"建立"按鈕的開關
   const [showMask, setShowMask] = useState(false)
+
   //"搜尋"按鈕的開關
   const [showSearch, setShowSearch] = useState(false)
+
   //"通知"按鈕的開關
   const [showNotify, setShowNotify] = useState(false)
+
   //"更多"按鈕的開關
   const [showMore, setShowMore] = useState(false)
 
@@ -71,14 +76,19 @@ export const LeftSideBar = () => {
     <>
       {/*跳出"建立"畫面*/}
       {showMask && <Build showMask={showMask} setShowMask={setShowMask} />}
+
       {/*彈出"更多"列表*/}
       {showMore && <More />}
+
       {/*滑出"搜尋"框*/}
       <Search showSearch={showSearch} setShowSearch={setShowSearch} />
+
       {/*滑出"通知"框*/}
       <Notify showNotify={showNotify} />
+
       {/*手機板上下欄選單(當畫面寬度<768時顯示)*/}
       <MobileSidebar handleButtonClick={handleButtonClick} />
+
       {/*電腦版左側欄選單(當畫面寬度<1280時簡化，當畫面寬度<768時隱藏)*/}
       <div
         className={`${
@@ -106,6 +116,7 @@ export const LeftSideBar = () => {
             </a>
           </div>
         </div>
+
         {/*側欄各按鈕渲染*/}
         <nav className="w-11/12 h-3/4 m-auto flex justify-center">
           <ul className="flex-col w-11/12">

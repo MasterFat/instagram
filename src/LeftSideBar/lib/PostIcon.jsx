@@ -1,3 +1,4 @@
+//icons
 import heart from "/src/image/heart.svg"
 import messege from "/src/image/messege.svg"
 import tag from "/src/image/tag.svg"

@@ -76,9 +76,10 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
             </div>
             {/*照片區塊*/}
             <div className="w-full border rounded-md border-zinc-700">
-              <img src={post.photo} alt="" className="w-full h-[24rem]  border-0 rounded-sm aspect-auto object-contain" />
+              <img src={post.photo} alt="" className="w-full h-[24rem] border-0 rounded-sm aspect-auto object-contain" />
             </div>
-            {/*按讚、留言等..按鈕區塊(按下"留言圖按鈕"則彈出當則貼文所有內容)*/}
+
+            {/*按讚、留言等..按鈕區塊(按下"留言圖示按鈕"則彈出當則貼文所有內容)*/}
             <div className="relative w-full h-10 flex items-center">
               {PostIcon.map((item) => (
                 <button
@@ -92,15 +93,17 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
                 </button>
               ))}
             </div>
+
             {/*內文、留言區塊*/}
             <div className="w-full text-white">
               {/*讚數區塊*/}
               <div className="mb-1">
                 <span className="font-bold text-m">6個讚</span>
               </div>
+
               {/*帳號、內文區塊(按下"更多"按鈕則展示出所有內文內容,如果內文內容少於10個字則不顯示"更多")*/}
               <div className="text-md flex">
-                <span className="font-bold ">{post.account}</span>
+                <span className="font-bold">{post.account}</span>
                 <div className={`${showPostsContent === post.id ? "w-full" : "w-32 truncate"} ml-2`}>
                   <span>{post.content}</span>
                 </div>
@@ -113,6 +116,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
                   </button>
                 </div>
               </div>
+
               {/*查看留言數區塊(按下"查看全部XX則留言"則彈出當則貼文所有內容,如果留言數為0則不顯示"查看全部XX則留言")*/}
               <div className={`${checkComment(post) === 0 ? "hidden" : "block"}`}>
                 <button
@@ -126,6 +130,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
                   則留言
                 </button>
               </div>
+
               {/*留言輸入區塊(如果沒輸入任何文字則無法送出留言)*/}
               <div>
                 <form
@@ -135,6 +140,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
                   id={post.id}
                 >
                   <input
+                    id="input"
                     onChange={(e) => setNewComment(e.target.value)}
                     type="text"
                     placeholder="留言....."
