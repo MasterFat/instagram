@@ -22,6 +22,7 @@ import { FaBars } from "react-icons/fa6"
 import { GoHomeFill } from "react-icons/go"
 import { PiMagnifyingGlassBold } from "react-icons/pi"
 
+//左側欄選單
 export const LeftSideBar = () => {
   //設定按下的按鈕id
   const [currentId, setcurrentId] = useState(-1) // TODO: 用css做
