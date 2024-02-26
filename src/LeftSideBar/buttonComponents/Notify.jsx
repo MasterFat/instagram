@@ -1,11 +1,7 @@
 //"通知" 按鈕 (滑出式側欄)
-export const Notify = ({ showNotify }) => {
+export const Notify = ({ openNotify }) => {
   return (
-    <div
-      className={`${
-        showNotify ? "translate-x-16 opacity-100" : "-translate-x-full opacity-0"
-      } transition-all ease-out duration-500 w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col text-white font-bold`}
-    >
+    <div className={`${openNotify() ? "slide" : ""} w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col text-white font-bold`}>
       <div className="w-full h-12 flex items-center">
         <span className="ml-3">通知</span>
       </div>

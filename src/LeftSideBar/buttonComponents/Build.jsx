@@ -3,17 +3,17 @@ import { FaPhotoFilm } from "react-icons/fa6"
 import { FaX } from "react-icons/fa6"
 
 //"建立" 按鈕
-export default function Build({ showMask, setShowMask }) {
+export default function Build({ close }) {
   return (
     <div
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setShowMask(!showMask)
+          close()
         }
       }}
       className="w-full h-full bg-[#00000090] fixed z-50 flex justify-center items-center"
     >
-      <button onClick={() => setShowMask(!showMask)} className="absolute top-2 right-2">
+      <button onClick={() => close()} className="absolute top-2 right-2">
         <FaX className="text-white" />
       </button>
       <div className="w-80 h-3/4 bg-zinc-800 border-0 rounded-lg flex-col justify-center items-center">
