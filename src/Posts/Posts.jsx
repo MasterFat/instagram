@@ -8,7 +8,7 @@ import { PostIcon } from "../LeftSideBar/lib/PostIcon"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 import Gangar from "/src/image/story/f.png"
 
-export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewComment }) => {
+export const Posts = ({ setpostId, openEachPost }) => {
   //全部貼文資料
   const [posts, setPosts] = useState([])
 
@@ -22,7 +22,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
   const checkComment = (post) => {
     const eachPostComments = []
     allComments.map((comment) => {
-      if (comment.post === post.id) {
+      if (comment.commentId === post.id) {
         eachPostComments.push(comment)
       }
     })
@@ -44,8 +44,10 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
   }
 
   //新增留言
-  const addComment = (item) => {
-    axios.post("http://localhost:8000/comments", { post: item.id, account: "ffff", avatar: Gangar, date: "剛剛", content: newComment }).then(() => getComment())
+  const addComment = (item, newComment) => {
+    axios
+      .post("http://localhost:8000/comments", { commentId: item.id, account: "ffff", avatar: Gangar, date: "剛剛", content: newComment })
+      .then(() => getComment())
   }
 
   useEffect(() => {
@@ -84,7 +86,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
               {PostIcon.map((item) => (
                 <button
                   onClick={() => {
-                    item.id === 2 && setShowPosts(!showPosts), setpostId(post.id)
+                    item.id === 2 && openEachPost(), setpostId(post.id)
                   }}
                   key={item.id}
                   className={`${item.id === 4 ? "absolute right-0 bottom-2" : "mr-4"} w-5 h-5`}
@@ -121,7 +123,7 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
               <div className={`${checkComment(post) === 0 ? "hidden" : "block"}`}>
                 <button
                   onClick={() => {
-                    setShowPosts(!showPosts), setpostId(post.id)
+                    openEachPost(), setpostId(post.id)
                   }}
                   className="text-zinc-400 text-md"
                 >
@@ -132,27 +134,37 @@ export const Posts = ({ setpostId, showPosts, setShowPosts, newComment, setNewCo
               </div>
 
               {/*留言輸入區塊(如果沒輸入任何文字則無法送出留言)*/}
-              <div>
-                <form
-                  onSubmit={() => {
-                    newComment.length > 0 && addComment(post)
-                  }}
-                  id={post.id}
-                >
-                  <input
-                    id="input"
-                    onChange={(e) => setNewComment(e.target.value)}
-                    type="text"
-                    placeholder="留言....."
-                    className="w-full bg-black outline-none placeholder:text-zinc-400 placeholder:text-md"
-                  />
-                </form>
-              </div>
+              <CommentForm post={post} addComment={addComment} />
             </div>
             <div className="w-full h-10 border-y border-y-zinc-700 mt-5"></div>
           </div>
         ))}
       </div>
     </>
+  )
+}
+
+const CommentForm = ({ post, addComment }) => {
+  //新增貼文留言輸入字串
+  const [newComment, setNewComment] = useState("")
+  console.log(newComment)
+  const handleSubmit = () => {
+    newComment.length > 0 && addComment(post, newComment), setNewComment("")
+  }
+
+  return (
+    <div>
+      {/* TODO: 把 form變成一個獨立的 component，把 input狀態放進去 */}
+      <form onSubmit={() => handleSubmit()} id={post.id}>
+        <input
+          id="input"
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+          type="text"
+          placeholder="留言....."
+          className="w-full bg-black outline-none placeholder:text-zinc-400 placeholder:text-md"
+        />
+      </form>
+    </div>
   )
 }
