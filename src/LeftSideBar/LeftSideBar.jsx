@@ -26,25 +26,11 @@ export const LeftSideBar = () => {
   //設定按下的按鈕id
   const [currentId, setcurrentId] = useState(-1) // TODO: 用css做
 
-  //電腦版 左側欄選單 內容資料陣列
-  const LeftSideBarData = [
-    { id: 1, name: "首頁", icon: <GoHomeFill /> }, // 把click做在這裡
-    { id: 2, name: "搜尋", icon: <PiMagnifyingGlassBold />, component: <Search currentId={currentId} /> },
-    { id: 3, name: "探索", icon: <FaRegCompass /> },
-    { id: 4, name: "連續短片", icon: <BiMoviePlay /> },
-    { id: 5, name: "訊息", icon: <PiMessengerLogoBold /> },
-    { id: 6, name: "通知", icon: <FaRegHeart />, component: <Notify currentId={currentId} /> },
-    { id: 7, name: "建立", icon: <FiPlusSquare />, component: <Build setcurrentId={setcurrentId} /> },
-    { id: 8, name: "個人檔案", icon: <FaRegUser /> },
-    { id: 9, name: "Threads", icon: <FaThreads />, child: [1, 2] },
-    { id: 10, name: "更多", icon: <FaBars />, component: <More /> },
-  ]
-
   //判斷按下的按鈕是哪個
   const handleButtonClick = (item) => {
     setcurrentId(item.id)
     if (currentId === item.id) {
-      setcurrentId(-1)
+      close()
       return
     }
     if (!item.component) {
@@ -52,6 +38,32 @@ export const LeftSideBar = () => {
       return
     }
   }
+
+  const openSearch = () => {
+    if (currentId === 2) return true
+  }
+
+  const openNotify = () => {
+    if (currentId === 6) return true
+  }
+
+  const close = () => {
+    setcurrentId(-1)
+  }
+
+  //電腦版 左側欄選單 內容資料陣列
+  const LeftSideBarData = [
+    { id: 1, name: "首頁", icon: <GoHomeFill /> }, // 把click做在這裡
+    { id: 2, name: "搜尋", icon: <PiMagnifyingGlassBold />, component: <Search openSearch={openSearch} /> },
+    { id: 3, name: "探索", icon: <FaRegCompass /> },
+    { id: 4, name: "連續短片", icon: <BiMoviePlay /> },
+    { id: 5, name: "訊息", icon: <PiMessengerLogoBold /> },
+    { id: 6, name: "通知", icon: <FaRegHeart />, component: <Notify openNotify={openNotify} /> },
+    { id: 7, name: "建立", icon: <FiPlusSquare />, component: <Build close={close} /> },
+    { id: 8, name: "個人檔案", icon: <FaRegUser /> },
+    { id: 9, name: "Threads", icon: <FaThreads />, child: [1, 2] },
+    { id: 10, name: "更多", icon: <FaBars />, component: <More /> },
+  ]
 
   return (
     <>
