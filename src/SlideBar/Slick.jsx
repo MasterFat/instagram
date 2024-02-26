@@ -6,7 +6,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-export const Slick = ({ showStorys, setShowStorys, setStoryId, spin, setSpin }) => {
+export const Slick = ({ openStories, setStoryId, spin, setSpin }) => {
   //限時動態資料
   const [story, setStory] = useState([])
   //Slick套件每次顯示X個物件設定
@@ -62,7 +62,7 @@ export const Slick = ({ showStorys, setShowStorys, setStoryId, spin, setSpin }) 
           <div key={item.id} className="ml-1">
             <button
               onClick={() => {
-                setShowStorys(!showStorys), setStoryId(item.id), setSpin(!spin)
+                openStories(), setStoryId(item.id), setSpin(!spin)
               }}
             >
               <div className="border-0 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 rounded-full w-14 h-14 flex justify-center items-center">
