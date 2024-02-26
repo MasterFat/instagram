@@ -11,7 +11,7 @@ import { FaRegHeart } from "react-icons/fa6"
 import { FiSmile } from "react-icons/fi"
 import { FaX } from "react-icons/fa6"
 
-export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewComment }) => {
+export const EachPost = ({ postId, close }) => {
   //當則貼文資料
   const [postData, setPostData] = useState([])
 
@@ -25,15 +25,14 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
 
   //取得當則貼文留言
   const getComment = (postId) => {
-    axios.get("http://localhost:8000/comments?post=" + postId).then((res) => setCommentsData(res.data))
+    axios.get("http://localhost:8000/comments?commentId=" + postId).then((res) => setCommentsData(res.data))
   }
 
   //新增留言
-  const addComment = (item) => {
+  const addComment = (item, newComment) => {
     axios
-      .post("http://localhost:8000/comments", { post: item.id, account: "ffff", avatar: Gangar, date: "剛剛", content: newComment })
+      .post("http://localhost:8000/comments", { commentId: item.id, account: "ffff", avatar: Gangar, date: "剛剛", content: newComment })
       .then(() => getComment(postId))
-    setNewComment("")
   }
 
   useEffect(() => {
@@ -44,14 +43,16 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
     <div
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setShowPosts(!showPosts)
+          close()
+          // TODO: 這裡只需要 setShowPosts(false)，這個 component 不需要 showPosts
+          // TODO: 不要把 setShowPosts 傳給這個 component，在父層先設計一個 close 的 function 再當作 props 傳入使用
         }
       }}
       className="w-full h-full bg-[#00000090] fixed z-50 flex justify-center items-center"
     >
       {/*右上X按鈕*/}
       <div className="absolute text-white right-2 top-2">
-        <button onClick={() => setShowPosts(!showPosts)}>
+        <button onClick={() => close()}>
           <FaX />
         </button>
       </div>
@@ -98,7 +99,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
                     </div>
                     <div className="w-full text-xs text-zinc-400 font-bold">
                       <span className="mr-2">{comment.date}</span>
-                      <span className={`${!comment.like && "hidden"} mr-2`}>{comment.like}個讚</span>
+                      <span className={`${!comment.like ? "hidden" : ""} mr-2`}>{comment.like}個讚</span>
                       <span>回覆</span>
                     </div>
                   </div>
@@ -130,30 +131,8 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
           <div className="w-full flex h-10">
             <div className="w-full flex items-center text-white">
               <FiSmile className="ml-2" />
-              <form
-                onSubmit={() => {
-                  newComment.length > 0 && addComment(postData)
-                }}
-                id={postData.id}
-                name="form"
-                className="w-10/12"
-              >
-                <input
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  type="text"
-                  placeholder="留言....."
-                  className="w-8/12 ml-2 bg-black outline-none placeholder:text-zinc-400 placeholder:text-sm"
-                />
-              </form>
-              <div
-                onClick={() => {
-                  newComment.length > 0 && addComment(postData)
-                }}
-                className="w-1/6 flex justify-center"
-              >
-                <span className={`${newComment.length > 0 ? "text-sky-500 cursor-pointer hover:text-white" : "text-slate-500"} font-bold text-md `}>發佈</span>
-              </div>
+
+              <CommentForm postData={postData} addComment={addComment} />
             </div>
           </div>
         </div>
@@ -163,7 +142,7 @@ export const EachPost = ({ postId, showPosts, setShowPosts, newComment, setNewCo
 }
 
 //頭像
-function Avatar({ data }) {
+const Avatar = ({ data }) => {
   return (
     <div className="border-0 m-1 bg-gradient-to-tr from-yellow-400 to-fuchsia-600 rounded-full w-10 h-10 flex justify-center items-center">
       <div className="border-0 bg-black rounded-full w-[2.2rem] h-[2.2rem] flex justify-center items-center">
@@ -172,5 +151,30 @@ function Avatar({ data }) {
         </div>
       </div>
     </div>
+  )
+}
+
+const CommentForm = ({ postData, addComment }) => {
+  //新增貼文留言輸入字串
+  const [newComment, setNewComment] = useState("")
+
+  const handleSubmit = () => {
+    newComment.length > 0 && addComment(postData, newComment), setNewComment("")
+  }
+  return (
+    <>
+      <form onSubmit={() => handleSubmit()} id={postData.id} name="form" className="w-10/12">
+        <input
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+          type="text"
+          placeholder="留言....."
+          className="w-8/12 ml-2 bg-black outline-none placeholder:text-zinc-400 placeholder:text-sm"
+        />
+      </form>
+      <div onClick={() => handleSubmit()} className="w-1/6 flex justify-center">
+        <span className={`${newComment.length > 0 ? "text-sky-500 cursor-pointer hover:text-white" : "text-slate-500"} font-bold text-md `}>發佈</span>
+      </div>
+    </>
   )
 }
