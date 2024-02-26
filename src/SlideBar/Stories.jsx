@@ -8,7 +8,7 @@ import { BiSolidVolumeMute } from "react-icons/bi"
 import { BsThreeDots } from "react-icons/bs"
 
 //展示限時動態頁面
-export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, setSpin }) => {
+export const Stories = ({ close, storyId, setStoryId, spin, setSpin }) => {
   //單個限時動態資料
   const [currentStoryData, setCurrentStoryData] = useState([])
   //設定立方體轉動角度
@@ -31,9 +31,9 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
   useEffect(() => {
     getStorys(storyId)
     if (storyId < 1 || storyId > 16) {
-      setShowStorys(false)
+      close()
     }
-  }, [storyId, setStoryId, degree, setShowStorys])
+  }, [storyId, setStoryId, degree, close])
 
   //限時動態遮罩背景+轉動立方體
   return (
@@ -52,8 +52,7 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
           position="front"
           storyId={storyId}
           setStoryId={setStoryId}
-          showStorys={showStorys}
-          setShowStorys={setShowStorys}
+          close={close}
           storyData={currentStoryData}
           degree={degree}
           setDegree={setDegree}
@@ -63,8 +62,7 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
           position="left"
           storyId={storyId}
           setStoryId={setStoryId}
-          showStorys={showStorys}
-          setShowStorys={setShowStorys}
+          close={close}
           storyData={currentStoryData}
           degree={degree}
           setDegree={setDegree}
@@ -74,8 +72,7 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
           position="right"
           storyId={storyId}
           setStoryId={setStoryId}
-          showStorys={showStorys}
-          setShowStorys={setShowStorys}
+          close={close}
           storyData={currentStoryData}
           degree={degree}
           setDegree={setDegree}
@@ -85,8 +82,7 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
           position="back"
           storyId={storyId}
           setStoryId={setStoryId}
-          showStorys={showStorys}
-          setShowStorys={setShowStorys}
+          close={close}
           storyData={currentStoryData}
           degree={degree}
           setDegree={setDegree}
@@ -98,7 +94,7 @@ export const Storys = ({ showStorys, setShowStorys, storyId, setStoryId, spin, s
 }
 
 //立方體的每一面
-const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegree, storyId, setStoryId, transitionEnd }) => {
+const Story = ({ close, storyData, position, degree, setDegree, storyId, setStoryId, transitionEnd }) => {
   return (
     <>
       {/*限時動態容器*/}
@@ -133,7 +129,7 @@ const Story = ({ showStorys, setShowStorys, storyData, position, degree, setDegr
           <button className="mr-3">
             <BiSolidVolumeMute />
           </button>
-          <button onClick={() => setShowStorys(!showStorys)}>
+          <button onClick={() => close()}>
             <FaX />
           </button>
         </div>

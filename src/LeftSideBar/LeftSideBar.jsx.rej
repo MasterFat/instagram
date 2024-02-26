@@ -1,0 +1,104 @@
+diff a/src/LeftSideBar/LeftSideBar.jsx b/src/LeftSideBar/LeftSideBar.jsx	(rejected hunks)
+@@ -4,69 +4,50 @@
+ import Build from "./buttonComponents/build"
+ import { More } from "./buttonComponents/More"
+ import { Search } from "./buttonComponents/Search"
+-import { MobileSidebar } from "./MobileSidebar"
+-
+-//側欄按鈕靜態資料
+-import { LeftSideBarData } from "./lib/LeftSideBarData"
++import { Notify } from "./buttonComponents/Notify"
+ 
+ //icons
+ import { FaInstagram } from "react-icons/fa"
+-import { Notify } from "./buttonComponents/Notify"
+ import instagram from "/src/image/instagram.svg"
+ 
+-export const LeftSideBar = () => {
+-  //設定滑鼠移進移出每個按鈕的id
+-  const [currentId, setcurrentId] = useState(-1)
+-
+-  //"建立"按鈕的開關
+-  const [showMask, setShowMask] = useState(false)
+-
+-  //"搜尋"按鈕的開關
+-  const [showSearch, setShowSearch] = useState(false)
++//LeftSideBar icons
++import { FaRegCompass } from "react-icons/fa"
++import { BiMoviePlay } from "react-icons/bi"
++import { PiMessengerLogoBold } from "react-icons/pi"
++import { FaRegHeart } from "react-icons/fa6"
++import { FiPlusSquare } from "react-icons/fi"
++import { FaRegUser } from "react-icons/fa"
++import { FaThreads } from "react-icons/fa6"
++import { FaBars } from "react-icons/fa6"
++import { GoHomeFill } from "react-icons/go"
++import { PiMagnifyingGlassBold } from "react-icons/pi"
+ 
+-  //"通知"按鈕的開關
+-  const [showNotify, setShowNotify] = useState(false)
+-
+-  //"更多"按鈕的開關
+-  const [showMore, setShowMore] = useState(false)
++export const LeftSideBar = () => {
++  //設定按下的按鈕id
++  const [currentId, setcurrentId] = useState(-1) // TODO: 用css做
++
++  //電腦版 左側欄選單 內容資料陣列
++  const LeftSideBarData = [
++    { id: 1, name: "首頁", icon: <GoHomeFill /> }, // 把click做在這裡
++    { id: 2, name: "搜尋", icon: <PiMagnifyingGlassBold />, component: <Search currentId={currentId} /> },
++    { id: 3, name: "探索", icon: <FaRegCompass /> },
++    { id: 4, name: "連續短片", icon: <BiMoviePlay /> },
++    { id: 5, name: "訊息", icon: <PiMessengerLogoBold /> },
++    { id: 6, name: "通知", icon: <FaRegHeart />, component: <Notify currentId={currentId} /> },
++    { id: 7, name: "建立", icon: <FiPlusSquare />, component: <Build setcurrentId={setcurrentId} /> },
++    { id: 8, name: "個人檔案", icon: <FaRegUser /> },
++    { id: 9, name: "Threads", icon: <FaThreads />, child: [1, 2] },
++    { id: 10, name: "更多", icon: <FaBars />, component: <More /> },
++  ]
+ 
+   //判斷按下的按鈕是哪個
+   const handleButtonClick = (item) => {
+-    if (item === "建立") {
+-      setShowMask(!showMask)
+-      return
+-    }
+-    if (item === "更多") {
+-      setShowMore(!showMore)
+-      return
+-    }
+-    if (item === "搜尋") {
+-      setShowSearch(!showSearch)
+-      setShowNotify(false)
+-      return
+-    }
+-    if (item === "探索") {
+-      alert("功能尚未啟用")
+-      return
+-    }
+-    if (item === "連續短片") {
+-      alert("功能尚未啟用")
+-      return
+-    }
+-    if (item === "訊息") {
+-      alert("功能尚未啟用")
+-      return
+-    }
+-    if (item === "通知") {
+-      setShowNotify(!showNotify)
+-      setShowSearch(false)
+-      return
+-    }
+-    if (item === "個人檔案") {
+-      alert("功能尚未啟用")
++    setcurrentId(item.id)
++    if (currentId === item.id) {
++      setcurrentId(-1)
+       return
+     }
+-    if (item === "Threads") {
++    if (!item.component) {
+       alert("功能尚未啟用")
+       return
+     }

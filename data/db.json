@@ -143,7 +143,7 @@
   ],
   "comments": [
     {
-      "post": 1,
+      "commentId": 1,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "content": "太陽光線是三小??",
@@ -152,7 +152,7 @@
       "id": 1
     },
     {
-      "post": 2,
+      "commentId": 2,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "content": "堡包再見",
@@ -161,7 +161,7 @@
       "id": 2
     },
     {
-      "post": 2,
+      "commentId": 2,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "content": "默哀..",
@@ -170,7 +170,7 @@
       "id": 3
     },
     {
-      "post": 1,
+      "commentId": 1,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "content": "笑死",
@@ -179,7 +179,7 @@
       "id": 4
     },
     {
-      "post": 3,
+      "commentId": 3,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "content": "為什麼要這樣對待她",
@@ -188,7 +188,7 @@
       "id": 5
     },
     {
-      "post": 4,
+      "commentId": 1,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
@@ -196,68 +196,12 @@
       "id": 6
     },
     {
-      "post": 1,
+      "commentId": 1,
       "account": "ffff",
       "avatar": "/src/image/story/f.png",
       "date": "剛剛",
-      "content": "333",
+      "content": "嘿嘿",
       "id": 7
-    },
-    {
-      "post": 4,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "這台車好帥哦!",
-      "id": 8
-    },
-    {
-      "post": 4,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "這台車帥喔!",
-      "id": 9
-    },
-    {
-      "post": 6,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "你好唷",
-      "id": 10
-    },
-    {
-      "post": 4,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "好帥!!",
-      "id": 11
-    },
-    {
-      "post": 1,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "你好唷",
-      "id": 12
-    },
-    {
-      "post": 2,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "好可愛....",
-      "id": 13
-    },
-    {
-      "post": 6,
-      "account": "ffff",
-      "avatar": "/src/image/story/f.png",
-      "date": "剛剛",
-      "content": "好好笑",
-      "id": 14
     }
   ]
 }
