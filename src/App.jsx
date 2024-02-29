@@ -36,10 +36,10 @@ export default function App() {
 
   const [spin, setSpin] = useState(false)
 
-  //限時動態頁面開關
+  //限時動態頁面開關狀態
   const storiesVisible = useBoolean(false)
 
-  //當則貼文內容頁面開關
+  //當則貼文內容頁面開關狀態
   const eachPostVisible = useBoolean(false)
 
   return (

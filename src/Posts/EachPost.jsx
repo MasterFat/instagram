@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
-//貼文的四個按鈕圖示資料
-import { PostIcon } from "../LeftSideBar/lib/PostIcon"
+import classNames from "classnames"
 
 //icons
 import Gangar from "/src/image/story/f.png"
@@ -10,23 +8,35 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi"
 import { FaRegHeart } from "react-icons/fa6"
 import { FiSmile } from "react-icons/fi"
 import { FaX } from "react-icons/fa6"
+import heart from "/src/image/heart.svg"
+import messege from "/src/image/messege.svg"
+import tag from "/src/image/tag.svg"
+import flag from "/src/image/flag.svg"
 
+const PostIcon = [
+  { id: 1, src: heart },
+  { id: 2, src: messege },
+  { id: 3, src: tag },
+  { id: 4, src: flag },
+]
+
+//取得當則貼文
+const getPost = (postId, setPostData) => {
+  axios.get("http://localhost:8000/posts/" + postId).then((res) => setPostData(res.data))
+}
+
+//取得當則貼文留言
+const getComment = (postId, setCommentsData) => {
+  axios.get("http://localhost:8000/comments?commentId=" + postId).then((res) => setCommentsData(res.data))
+}
+
+//每則貼文頁面
 export const EachPost = ({ postId, close }) => {
   //當則貼文資料
-  const [postData, setPostData] = useState([])
+  const [postData, setPostData] = useState({})
 
   //留言資料
   const [commentsData, setCommentsData] = useState([])
-
-  //取得當則貼文
-  const getPost = (postId) => {
-    axios.get("http://localhost:8000/posts/" + postId).then((res) => setPostData(res.data))
-  }
-
-  //取得當則貼文留言
-  const getComment = (postId) => {
-    axios.get("http://localhost:8000/comments?commentId=" + postId).then((res) => setCommentsData(res.data))
-  }
 
   //新增留言
   const addComment = (item, newComment) => {
@@ -35,8 +45,16 @@ export const EachPost = ({ postId, close }) => {
       .then(() => getComment(postId))
   }
 
+  //判斷最後一個icon的CSS
+  const lastIcon = (id, arr) =>
+    classNames("ml-3", {
+      "absolute right-0": id === arr.length - 1,
+    })
+  //顯示有無讚數的CSS
+  const noLike = (comment) => classNames({ hidden: !comment.like })
+
   useEffect(() => {
-    getPost(postId), getComment(postId)
+    getPost(postId, setPostData), getComment(postId, setCommentsData)
   }, [postId])
 
   return (
@@ -44,8 +62,6 @@ export const EachPost = ({ postId, close }) => {
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           close()
-          // TODO: 這裡只需要 setShowPosts(false)，這個 component 不需要 showPosts
-          // TODO: 不要把 setShowPosts 傳給這個 component，在父層先設計一個 close 的 function 再當作 props 傳入使用
         }
       }}
       className="w-full h-full bg-[#00000090] fixed z-50 flex justify-center items-center"
@@ -99,7 +115,7 @@ export const EachPost = ({ postId, close }) => {
                     </div>
                     <div className="w-full text-xs text-zinc-400 font-bold">
                       <span className="mr-2">{comment.date}</span>
-                      <span className={`${!comment.like ? "hidden" : ""} mr-2`}>{comment.like}個讚</span>
+                      <span className={`${noLike(comment)} mr-2`}>{comment.like}個讚</span>
                       <span>回覆</span>
                     </div>
                   </div>
@@ -116,8 +132,8 @@ export const EachPost = ({ postId, close }) => {
           {/*讚、留言按鈕區塊*/}
           <div className="relative w-full flex flex-wrap border-b border-zinc-900">
             <div className="w-full flex items-center">
-              {PostIcon.map((item) => (
-                <button key={item.id} className={`${item.id === 4 ? "absolute right-0" : "ml-3"} w-5 my-2 `}>
+              {PostIcon.map((item, id, arr) => (
+                <button key={item.id} className={`${lastIcon(id, arr)} w-5 my-2 `}>
                   <img src={item.src} alt="" />
                 </button>
               ))}
@@ -161,6 +177,12 @@ const CommentForm = ({ postData, addComment }) => {
   const handleSubmit = () => {
     newComment.length > 0 && addComment(postData, newComment), setNewComment("")
   }
+
+  const isEnter = classNames("font-bold text-md", {
+    "text-sky-500 cursor-pointer hover:text-white": newComment.length > 0,
+    "text-slate-500": newComment.length < 0,
+  })
+
   return (
     <>
       <form onSubmit={() => handleSubmit()} id={postData.id} name="form" className="w-10/12">
@@ -173,7 +195,7 @@ const CommentForm = ({ postData, addComment }) => {
         />
       </form>
       <div onClick={() => handleSubmit()} className="w-1/6 flex justify-center">
-        <span className={`${newComment.length > 0 ? "text-sky-500 cursor-pointer hover:text-white" : "text-slate-500"} font-bold text-md `}>發佈</span>
+        <span className={isEnter}>發佈</span>
       </div>
     </>
   )

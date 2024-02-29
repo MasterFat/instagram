@@ -1,7 +1,10 @@
+import classNames from "classnames"
+
 //"搜尋" 按鈕 (滑出式側欄)
 export const Search = ({ openSearch }) => {
+  const isOpen = classNames({ slide: openSearch(), "": !openSearch() })
   return (
-    <div className={`${openSearch() ? "slide" : ""} w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col`}>
+    <div className={`${isOpen} w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col`}>
       <div className="w-full h-12 flex items-center ">
         <span className="text-white font-bold ml-3">搜尋</span>
       </div>

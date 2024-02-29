@@ -117,7 +117,6 @@ const Story = ({ close, storyData, position, degree, setDegree, storyId, setStor
 
         {/*上方進度條*/}
         <div className="w-[27rem] h-[0.2rem] absolute top-1 bg-slate-300/50 border-0 rounded-md overflow-hidden">
-          {/* <div className={`forwards w-full h-full bg-white`}></div> */}
           <div className={`${transitionEnd ? "forwards" : "w-0"} h-full bg-white`}></div>
         </div>
 

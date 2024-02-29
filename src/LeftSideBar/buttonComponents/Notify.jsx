@@ -1,7 +1,10 @@
+import classNames from "classnames"
+
 //"通知" 按鈕 (滑出式側欄)
 export const Notify = ({ openNotify }) => {
+  const isOpen = classNames({ slide: openNotify(), "": !openNotify() })
   return (
-    <div className={`${openNotify() ? "slide" : ""} w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col text-white font-bold`}>
+    <div className={`${isOpen} w-64 h-full bg-black border-r border-zinc-700 rounded-lg z-40 fixed flex-col text-white font-bold`}>
       <div className="w-full h-12 flex items-center">
         <span className="ml-3">通知</span>
       </div>

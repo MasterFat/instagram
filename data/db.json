@@ -202,6 +202,14 @@
       "date": "剛剛",
       "content": "嘿嘿",
       "id": 7
+    },
+    {
+      "commentId": 1,
+      "account": "ffff",
+      "avatar": "/src/image/story/f.png",
+      "date": "剛剛",
+      "content": "你好唷",
+      "id": 8
     }
   ]
 }
